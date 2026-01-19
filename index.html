@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Bus Ticket Booking</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background: #f4f6f8;
+      margin: 0;
+      padding: 0;
+    }
+    header {
+      background: #1e88e5;
+      color: white;
+      padding: 15px;
+      text-align: center;
+    }
+    .container {
+      max-width: 900px;
+      margin: 20px auto;
+      background: white;
+      padding: 20px;
+      border-radius: 8px;
+      box-shadow: 0 0 10px rgba(0,0,0,0.1);
+    }
+    h2 {
+      color: #1e88e5;
+    }
+    .form-group {
+      margin-bottom: 15px;
+    }
+    label {
+      display: block;
+      margin-bottom: 5px;
+      font-weight: bold;
+    }
+    input, select, button {
+      width: 100%;
+      padding: 10px;
+      border-radius: 5px;
+      border: 1px solid #ccc;
+    }
+    button {
+      background: #1e88e5;
+      color: white;
+      border: none;
+      cursor: pointer;
+      font-size: 16px;
+    }
+    button:hover {
+      background: #1565c0;
+    }
+    .ticket {
+      margin-top: 20px;
+      padding: 15px;
+      border: 2px dashed #1e88e5;
+      display: none;
+    }
+    footer {
+      text-align: center;
+      padding: 10px;
+      background: #eee;
+      margin-top: 20px;
+    }
+  </style>
+</head>
+<body>
+
+<header>
+  <h1>Online Bus Ticket Booking</h1>
+  <p>Book your bus tickets easily</p>
+</header>
+
+<div class="container">
+  <h2>Book Ticket</h2>
+  <div class="form-group">
+    <label>From</label>
+    <input type="text" id="from" placeholder="Enter source city" />
+  </div>
+  <div class="form-group">
+    <label>To</label>
+    <input type="text" id="to" placeholder="Enter destination city" />
+  </div>
+  <div class="form-group">
+    <label>Date of Journey</label>
+    <input type="date" id="date" />
+  </div>
+  <div class="form-group">
+    <label>Bus Type</label>
+    <select id="busType">
+      <option>AC Sleeper</option>
+      <option>Non-AC Sleeper</option>
+      <option>AC Seater</option>
+      <option>Non-AC Seater</option>
+    </select>
+  </div>
+  <div class="form-group">
+    <label>Passenger Name</label>
+    <input type="text" id="name" placeholder="Enter passenger name" />
+  </div>
+
+  <button onclick="bookTicket()">Book Ticket</button>
+
+  <div class="ticket" id="ticket">
+    <h2>Bus Ticket</h2>
+    <p><strong>Name:</strong> <span id="tName"></span></p>
+    <p><strong>From:</strong> <span id="tFrom"></span></p>
+    <p><strong>To:</strong> <span id="tTo"></span></p>
+    <p><strong>Date:</strong> <span id="tDate"></span></p>
+    <p><strong>Bus Type:</strong> <span id="tBus"></span></p>
+    <p><strong>Status:</strong> Confirmed</p>
+  </div>
+</div>
+
+<footer>
+  <p>© 2026 Bus Ticket Booking System</p>
+</footer>
+
+<script>
+  function bookTicket() {
+    document.getElementById('tName').innerText = document.getElementById('name').value;
+    document.getElementById('tFrom').innerText = document.getElementById('from').value;
+    document.getElementById('tTo').innerText = document.getElementById('to').value;
+    document.getElementById('tDate').innerText = document.getElementById('date').value;
+    document.getElementById('tBus').innerText = document.getElementById('busType').value;
+    document.getElementById('ticket').style.display = 'block';
+  }
+</script>
+
+</body>
+</html>
